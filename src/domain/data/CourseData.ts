@@ -31,11 +31,6 @@ const courses = [
                                 children: [],
                                 chapters: [
                                     {id: 1, order: 1, name: "Introduction"},
-                                    {id: 2, order: 2, name: "Les tableaux"},
-                                    {id: 3, order: 3, name: "Les objets"},
-                                    {id: 4, order: 4, name: "Les closures"},
-                                    {id: 5, order: 5, name: "Les collections"},
-                                    {id: 6, order: 6, name: "Exercices"},
                                 ]
                             },
                             {
@@ -46,11 +41,6 @@ const courses = [
                                 children: [],
                                 chapters: [
                                     {id: 1, order: 1, name: "Introduction"},
-                                    {id: 2, order: 2, name: "Les tableaux"},
-                                    {id: 3, order: 3, name: "Les objets"},
-                                    {id: 4, order: 4, name: "Les closures"},
-                                    {id: 5, order: 5, name: "Les collections"},
-                                    {id: 6, order: 6, name: "Exercices"},
                                 ]
                             },
                             {
@@ -61,29 +51,9 @@ const courses = [
                                 children: [],
                                 chapters: [
                                     {id: 1, order: 1, name: "Introduction"},
-                                    {id: 2, order: 2, name: "Les tableaux"},
-                                    {id: 3, order: 3, name: "Les objets"},
-                                    {id: 4, order: 4, name: "Les closures"},
-                                    {id: 5, order: 5, name: "Les collections"},
-                                    {id: 6, order: 6, name: "Exercices"},
                                 ]
                             }
                         ],
-                        chapters: [
-                            {id: 1, order: 1, name: "Introduction"},
-                            {id: 2, order: 2, name: "Les variables"},
-                            {id: 3, order: 3, name: "Les fonctions"},
-                            {id: 4, order: 4, name: "Branchements"},
-                            {id: 5, order: 5, name: "Exceptions"},
-                            {id: 6, order: 6, name: "Exercices"},
-                        ]
-                    },
-                    {
-                        id: 6,
-                        order: 2,
-                        name: "L'API fetch",
-                        slug: "fetch-api",
-                        children: [],
                         chapters: [
                             {id: 1, order: 1, name: "Introduction"},
                             {id: 2, order: 2, name: "Les tableaux"},
@@ -92,10 +62,79 @@ const courses = [
                             {id: 5, order: 5, name: "Les collections"},
                             {id: 6, order: 6, name: "Exercices"},
                         ]
+                    },
+                    {
+                        id: 6,
+                        order: 2,
+                        name: "L'API fetch",
+                        slug: "fetch-api",
+                        children: [
+                            {
+                                id: 7,
+                                order: 1,
+                                name: "Exécuter des reqiêtes HTTP",
+                                slug: "execute-http-request",
+                                children: [],
+                                chapters: [
+                                    {id: 1, order: 1, name: "Introduction"},
+                                ]
+                            },
+                            {
+                                id: 8,
+                                order: 1,
+                                name: "Donner un coprs à une requête",
+                                slug: "request-body",
+                                children: [],
+                                chapters: [
+                                    {id: 1, order: 1, name: "Introduction"},
+                                ]
+                            }
+                        ],
+                        chapters: [
+                            {id: 1, order: 1, name: "Introduction"},
+                        ]
                     }
                 ],
                 chapters: []
             },
+            {
+                id: 9,
+                order: 1,
+                name: "jQuery",
+                slug: "jquery",
+                children: [
+                    {
+                        id: 10,
+                        order: 1,
+                        name: "Les bases de la librairie",
+                        slug: "jquery-basics",
+                        children: [
+                            {
+                                id: 11,
+                                order: 1,
+                                name: "Les sélecteurs",
+                                slug: "jquery-selectors",
+                                children: [],
+                                chapters: [
+                                    {id: 1, order: 1, name: "Introduction"},
+                                ]
+                            }
+                        ],
+                        chapters: [
+                            {id: 1, order: 1, name: "Introduction"},
+                        ]
+                    },
+                    {
+                        id: 12,
+                        order: 1,
+                        name: "Aller plus loin",
+                        slug: "deeper-jquery",
+                        children: [],
+                        chapters: []
+                    }
+                ],
+                chapters: []
+            }
         ]
     },
     {

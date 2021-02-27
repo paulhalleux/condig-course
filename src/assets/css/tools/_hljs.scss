@@ -1,0 +1,32 @@
+.numbered.hljs{
+    counter-reset: line;
+}
+
+.numbered.hljs .line::before{
+    counter-increment: line;
+    content: counter(line) '.';
+    margin-right: 10px;
+}
+
+.can_copy{
+    position: relative;
+}
+
+.can_copy .copy_button{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 1);
+    padding: 4px 6px;
+    z-index: 10;
+    font-family: "Consolas", monospace, sans-serif;
+    font-size: 11px;
+    display: none;
+}
+
+.can_copy:hover .copy_button{
+    display: block;
+}

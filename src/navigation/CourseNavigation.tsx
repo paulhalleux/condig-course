@@ -21,7 +21,7 @@ export default function CourseNavigation(){
 function generateCategories(category: Category, current?: Category, level: number = 0){
     level++;
     if(category.hasChildren()){
-        return <ul className="category__group" key={category.id}>
+        return <ul className={`category__group` + (level === 1 ? `-main` : '')} key={category.id}>
             {getCategoryLink(category, level, current)}
             {category.children.map(child => {
                 return generateCategories(child, current, level)
@@ -36,5 +36,5 @@ function getCategoryLink(category: Category, level: number, current?: Category){
     return category.hasChapters() ?
         <li key={category.id} className={`category__level-${level-1} ${current?.id === category.id && `active`}`}>
             <Link to={`/course/${category.course.slug}/${category.slug}`}>{category.name}</Link>
-        </li> : <li key={category.id} className="category__main">{category.name}</li>
+        </li> : <li key={category.id} className={level === 1 ? "category__main" : `category__level-${level-1}`}>{category.name}</li>
 }

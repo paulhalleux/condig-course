@@ -1,0 +1,16 @@
+.message{
+    background: rgba(0,27,61,0.05);
+    color: #525370;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 23px;
+    margin-bottom: 15px;
+    padding: 1.2em 1.35em;
+    border-radius: 5px;
+}
+
+.message ul li{
+    list-style-type: disc;
+    margin-left: 17px;
+    padding-left: 10px;
+}

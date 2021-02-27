@@ -1,9 +1,15 @@
-@import "tools/reset";
 @import "tools/normalize";
+@import "tools/reset";
+@import "tools/hljs";
 
 @import "components/button";
 @import "components/badge";
 @import "components/card";
+@import "components/title";
+@import "components/message";
+
+@import "components/sections/title";
+@import "components/sections/text";
 
 @import "layouts/baselayout";
 @import "layouts/courselayout";

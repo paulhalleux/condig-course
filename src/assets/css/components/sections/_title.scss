@@ -1,0 +1,30 @@
+.chapter-title{
+    position: relative;
+    color: #373855;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 10px;
+
+    span{
+        display: none;
+        position: absolute;
+        top:0;
+        left: -20px;
+        i{
+            width: 20px;
+            font-size: 15px;
+            cursor: pointer;
+            color: #B2BAC4;
+            &:hover{
+                color: #4548b0;
+            }
+        }
+    }
+
+    &:hover {
+        span {
+            display: block;
+        }
+    }
+}
