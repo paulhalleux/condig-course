@@ -1,0 +1,26 @@
+.course{
+    display: grid;
+    grid-template-areas: "CONTENT SIDEBAR";
+    grid-template-columns: 800px 250px;
+}
+
+.course .course__content{
+    grid-area: CONTENT;
+}
+
+.course .course__sidebar{
+    grid-area: SIDEBAR;
+    position: relative;
+    ul{
+        padding: 25px;
+        border: 1px solid #d8e3ee;
+        height: max-content;
+        position: sticky;
+        top: 40px;
+
+        a{
+            color: #2B3545;
+            text-decoration: none;
+        }
+    }
+}

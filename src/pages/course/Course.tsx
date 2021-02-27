@@ -6,13 +6,25 @@ import Category from "../../domain/course/Category";
 
 type PageProps = {
     course: CourseModel
-    category?: Category
+    category: Category
 }
 
 export default function Course({course, category}: PageProps){
     return <CourseContext.Provider value={{course, category}}>
         <CourseLayout>
-            {course?.name} ---- {category?.name}
+            <div className="course">
+                <div className="course__content">
+                    {course.name}
+                    {category.name}
+                </div>
+                <div className="course__sidebar">
+                    <ul>
+                        {category?.chapters.map(chapter => (
+                            <li key={chapter.id}><a href={`#${chapter.id}`}>{chapter.order}. {chapter.name}</a></li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </CourseLayout>
     </CourseContext.Provider>
 }

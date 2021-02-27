@@ -1,0 +1,29 @@
+.category__main{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.category__level-1{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+li[class^="category__level-"]:not(.category__level-1){
+    margin-left: 15px;
+}
+
+
+li[class^="category__"] a{
+    text-decoration: none;
+    color: #2B3545;
+}
+
+li[class^="category__"].active a{
+    font-weight: bold;
+    color: #F6005C;
+}
+
+.category__group{
+    margin-bottom: 15px;
+}

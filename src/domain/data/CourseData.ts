@@ -81,7 +81,7 @@ const courses = [
                     {
                         id: 6,
                         order: 2,
-                        name: "L'API fetch'",
+                        name: "L'API fetch",
                         slug: "fetch-api",
                         children: [],
                         chapters: [

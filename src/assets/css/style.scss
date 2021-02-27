@@ -6,9 +6,12 @@
 @import "components/card";
 
 @import "layouts/baselayout";
+@import "layouts/courselayout";
 
+@import "pages/course";
 @import "pages/courses";
 
 @import "base";
 
+@import "navigation/coursenavigation";
 @import "navigation/basenavigation";

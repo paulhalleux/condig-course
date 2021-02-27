@@ -1,0 +1,18 @@
+.layout__course{
+    width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "SIDEBAR CONTENT";
+    grid-template-columns: 300px 1050px;
+    position: relative;
+    padding-top: 40px;
+}
+
+.layout__course-sidebar{
+    height: max-content;
+    position: sticky;
+    top: 40px;
+}
+
+.layout__course-content{
+}

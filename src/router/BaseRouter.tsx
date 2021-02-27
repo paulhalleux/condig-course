@@ -11,33 +11,33 @@ import Category from "../domain/course/Category";
 export default function BaseRouter(){
     return <BrowserRouter>
         <Switch>
-            <Route exact path={`/courses`}><Courses/></Route>
-            {registerCoursesRoutes()}
             <Route exact path={`/`}><Index/></Route>
+            <Route exact path={`/courses`}><Courses/></Route>
+            {findAllCourses().map(course => {
+                const first = course.getFirstCategory()
+                if(first === null) return null
+                else return <Route exact path={`/course/${course.slug}`} key={course.id}><Course course={course} category={first}/></Route>
+            })}
+            {findAllCourses().map(course => {
+                return course.categories.map(category => (
+                    registerCategoryRoutes(category)
+                ))
+            })}
             <Route component={UnknownPageError}/>
         </Switch>
     </BrowserRouter>
 }
 
-function registerCoursesRoutes(){
-    return <>
-        {findAllCourses().map(course => (
-            <Route exact path={`/course/${course.slug}`} key={course.id}><Course course={course}/></Route>
-        ))}
-        {findAllCourses().map(course => {
-            return course.categories.map(category => (
-                registerCategoryRoutes(category)
-            ))
-        })}
-    </>
-}
-
 function registerCategoryRoutes(category: Category): React.ReactNode|null{
     if(category.hasChildren()){
-        return category.children.map(child => registerCategoryRoutes(child))
+        return [category.hasChapters() && getCategoryRoute(category), ...category.children.map(child => (registerCategoryRoutes(child)))]
     }else{
-        return category.hasChapters() ?
-            <Route exact path={`/course/${category.course.slug}/${category.slug}`} key={category.id}><Course course={category.course} category={category}/></Route>
-            : null
+        return getCategoryRoute(category)
     }
+}
+
+function getCategoryRoute(category: Category){
+    return category.hasChapters() ?
+        <Route exact path={`/course/${category.course.slug}/${category.slug}`} key={category.id}><Course course={category.course} category={category}/></Route>
+        : null
 }

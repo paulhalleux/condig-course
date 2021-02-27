@@ -48,4 +48,24 @@ export default class Course{
         return this._categories
     }
 
+    public getFirstCategory(){
+        let cat: Category|null = null;
+        this.categories.forEach(category => {
+            if(cat === null)
+                if (category.hasChapters()) cat = category
+                else if (category.hasChildren()) cat = this.hasChapters(category)
+        })
+        return cat
+    }
+
+    private hasChapters(category: Category){
+        let cat: Category|null = null
+        category.children.forEach(child => {
+            if(cat === null)
+                if(child.hasChapters()) cat = child
+                else cat = this.hasChapters(child)
+        })
+        return cat;
+    }
+
 }
