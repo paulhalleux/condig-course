@@ -1,0 +1,25 @@
+.navigation__base{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #fff;
+    box-shadow: 0 1px 0 0 rgba(19,28,40,.07);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation__base h2{
+    color: #2B3545;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 21px;
+}
+
+.navigation__base-links{
+    margin-left: 25px;
+}
+
+.navigation__base-links *{
+    margin-right: 15px;
+}
