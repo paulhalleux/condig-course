@@ -1,14 +1,13 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import highlight from 'highlightjs'
 import '../../assets/css/tools/custom.css'
+import Section from "./Section";
+import {SectionContext} from "../../context/SectionContext";
+import TextSection from "./TextSection";
 highlight.initHighlightingOnLoad();
 
 type SectionProps = {
-    children: React.ReactNode
-    className?: string
-    language: string
-    numbered?: boolean
-    copyable?: boolean
+    children: string
 }
 
 const copyToClipboard = (str: any) => {
@@ -20,7 +19,13 @@ const copyToClipboard = (str: any) => {
     document.body.removeChild(el);
 };
 
-export default function CodeSection({ children, className = '', language, numbered=false, copyable=false}: SectionProps){
+export default function CodeSection({children}: SectionProps){
+    const context = useContext(SectionContext)
+    const desc = context?.section.typeConfig.description
+    const copyable = context?.section.typeConfig.copyable
+    const numbered = context?.section.typeConfig.numbered
+    const language = context?.section.typeConfig.language
+
     const code = useRef<any>()
     const [clicked, setClicked] = useState(false)
 
@@ -43,17 +48,20 @@ export default function CodeSection({ children, className = '', language, number
         }
     }
 
-    return <pre className={className + (copyable ? " can_copy" : "")}>
-        <code className={language + (numbered ? " numbered" : "")}
-              ref={code}>
-            {children}
-        </code>
-        {(copyable !== false ?
-            <span
-                className="copy_button"
-                onClick={(e) => copy(e)}>
-                    <i className={clicked?"fa fa-check":"far fa-copy"}/>
-            </span>
-            : '')}
-    </pre>
+    return <Section>
+        {desc ? <TextSection>{desc}</TextSection> : null}
+        <pre className={(copyable ? "can_copy" : "")}>
+            <code className={language + (numbered ? " numbered" : "")}
+                  ref={code}>
+                {children}
+            </code>
+                {(copyable !== false ?
+                    <span
+                        className="copy_button"
+                        onClick={(e) => copy(e)}>
+                        <i className={clicked?"fa fa-check":"far fa-copy"}/>
+                </span>
+                    : '')}
+        </pre>
+    </Section>
 }

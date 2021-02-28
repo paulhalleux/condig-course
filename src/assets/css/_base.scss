@@ -3,3 +3,41 @@
     padding: 0;
     font-family: "Segoe UI", sans-serif;
 }
+
+:root{
+    --color-gray-25: rgba(0,27,61,0.025);
+    --color-gray-35: rgba(0,27,61,0.035);
+    --color-gray-40: rgba(0,27,61,0.04);
+    --color-gray-50: rgba(0,27,61,0.05);
+    --color-gray-75: rgba(0,27,61,0.075);
+    --color-gray-100: rgba(0,27,61,0.1);
+    --color-gray-150: rgba(0,27,61,0.15);
+    --color-gray-200: rgba(0,27,61,0.2);
+    --color-gray-300: rgba(0,27,61,0.3);
+    --color-gray-400: rgba(0,27,61,0.4);
+    --color-gray-500: rgba(0,27,61,0.5);
+    --color-gray-600: rgba(0,27,61,0.6);
+    --color-gray-700: rgba(0,27,61,0.7);
+    --color-gray-800: rgba(0,27,61,0.8);
+    --color-gray-900: rgba(0,27,61,0.9);
+
+    --color-light: #B2BAC4;
+    --color-light-pastel: #B2BAC4;
+    --color-text-pastel: var(--color-gray-600);
+    --color-text-light: #525370;
+    --color-text: #373855;
+    --color-primary: #4548b0;
+
+    --card-background: #fff;
+}
+
+.none{
+    display: none;
+}
+
+.flex{
+    display: flex;
+    &.wrap{
+        flex-wrap: wrap;
+    }
+}

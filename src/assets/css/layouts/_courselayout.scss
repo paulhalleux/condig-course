@@ -14,7 +14,7 @@
 .layout__course-topbar{
     grid-area: TOPBAR;
     height: 48px;
-    border-bottom: 1px solid rgba(0,27,61,0.12);
+    border-bottom: 1px solid var(--color-gray-150);
     width: 100vw;
     left: 0;
     position: relative;
@@ -44,7 +44,7 @@
 .layout__course-sidebar{
     grid-area: SIDEBAR;
     padding-top: 30px;
-    border-right: 1px solid rgba(0,27,61,0.12);
+    border-right: 1px solid var(--color-gray-150);
     max-height: calc(100vh - 48px);
     height: 100%;
     display: block;

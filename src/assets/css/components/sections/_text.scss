@@ -1,6 +1,12 @@
 .text{
-    color: #373855;
+    color: var(--color-text);
     font-size: 15px;
     line-height: 25px;
     font-weight: 400;
+
+    ul li{
+        list-style-type: disc;
+        margin-left: 17px;
+        padding-left: 10px;
+    }
 }

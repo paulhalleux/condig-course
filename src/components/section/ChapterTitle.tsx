@@ -17,10 +17,10 @@ export default function ChapterTitle({chapter}: SectionProps){
         document.body.removeChild(el);
     }
 
-    return <h3 id={`${chapter.id}`} className="chapter-title">
-        <span onClick={() => copy(link)}>
+    return <h3 id={`${chapter.id}`} className="copyable-element chapter-title">
+        <span className="link-button" onClick={() => copy(link)}>
             <i className="fa fa-link"/>
         </span>
-        {chapter.name}
+        {chapter.order}. {chapter.name}
     </h3>
 }

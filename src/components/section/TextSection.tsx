@@ -1,11 +1,12 @@
 import React from "react";
+import Section from "./Section";
 
 type SectionProps = {
-    children: React.ReactNode
+    children: string
 }
 
 export default function TextSection({children}: SectionProps){
-    return <p className="text">
-        {children}
-    </p>
+    return <Section>
+        <p className="text" dangerouslySetInnerHTML={{__html:children}}/>
+    </Section>
 }

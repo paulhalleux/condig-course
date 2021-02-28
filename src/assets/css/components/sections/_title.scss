@@ -1,12 +1,22 @@
 .chapter-title{
-    position: relative;
-    color: #373855;
+    color: var(--color-text);
     font-weight: bold;
     font-size: 20px;
     line-height: 30px;
     margin-bottom: 10px;
+}
 
-    span{
+.section-title{
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 22px;
+    margin: 32px 0 15px;
+}
+
+.copyable-element {
+    position: relative;
+    span.link-button{
         display: none;
         position: absolute;
         top:0;
@@ -15,15 +25,14 @@
             width: 20px;
             font-size: 15px;
             cursor: pointer;
-            color: #B2BAC4;
+            color: var(--color-light);
             &:hover{
-                color: #4548b0;
+                color: var(--color-primary);
             }
         }
     }
-
     &:hover {
-        span {
+        span.link-button {
             display: block;
         }
     }
